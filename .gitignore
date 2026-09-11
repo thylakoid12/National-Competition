@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+q1/outputs/
+q1/results/
+q1/数据处理/
+q2/result/

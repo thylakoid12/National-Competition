@@ -1,0 +1,8 @@
+matplotlib
+numpy
+openpyxl
+pandas
+scipy
+catboost==1.2.10
+highspy==1.15.1
+numba==0.67.0
