@@ -5,7 +5,7 @@
 | 目录 | 内容 | 入口 |
 | --- | --- | --- |
 | [q1/代码](q1/代码/) | 第一题：预处理、储能调度模型、绘图、表格导出与扩展分析 | `preprocess.py` → `q1.py` |
-| [q2](q2/) | 第二题：预测、场景、滚动控制、优化、回测、审计与测试 | `run_formal_v2.py`；M3 续跑入口 `q2_m3_resume.py` |
+| [q2/代码](q2/代码/) | 第二题：A/B 模型、预测优化、滚动控制、Excel 导出与绘图 | `run.py` |
 
 第一题说明见 [q1/代码/README.md](q1/代码/README.md)，第二题说明见 [q2/README.md](q2/README.md)。根目录的 `preprocess.py` 是仓库原有脚本；本次两题代码以各自目录为准。
 
@@ -24,7 +24,7 @@ National-Competition/
 ├── q1/
 │   └── 代码/
 └── q2/
-    └── common/
+    └── 代码/
 ```
 
 ## 第一题
@@ -47,9 +47,8 @@ python q1.py
 ```powershell
 cd q2
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -X utf8 -m unittest discover -s . -p "test_q2*.py"
-.\.venv\Scripts\python.exe -X utf8 -u run_formal_v2.py
+.\.venv\Scripts\python.exe -m pip install -r 代码/requirements.txt
+.\.venv\Scripts\python.exe -X utf8 代码/run.py run-model --model A
 ```
 
-结果及检查点位于 `q2/result/`。完整年度回测可能耗时较长，运行与恢复方式见第二题说明。
+结果及检查点位于 `q2/结果/`。模型 B 使用 `run-model --model B`；已有结果可用 `export-excel --model all` 导出，`plot` 生成模型 B 图件。完整年度计算可能耗时较长，支持断点续跑。测试依赖本地已有计算结果；Excel 导出另需配置文档 Python、Node 和 @oai/artifact-tool，详见 [第二题运行说明](q2/代码/README.md)。

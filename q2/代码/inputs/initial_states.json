@@ -1,0 +1,6 @@
+{
+  "validation_initial": 10214.41940277778,
+  "evaluation_initial": 10181.135169351872,
+  "policy": "Common original January warmup; candidate validation trajectories are counterfactual and do not replace common warmup.",
+  "source": "Original common January warmup: result/formal_v2/runs/warmup; not candidate validation end states."
+}
