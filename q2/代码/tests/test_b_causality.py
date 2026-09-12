@@ -17,6 +17,8 @@ from microgrid.storage import read_arrays, read_json, write_json
 class BCausalityAudit(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        if not (CURRENT_RESULT / 'evaluation_bank.npz').is_file():
+            raise unittest.SkipTest('缺少历史 B 年度结果；新统计风险主线由 test_statistical_risk 验证')
         cls.cfg = load_config()
         cls.bank = read_arrays(CURRENT_RESULT / 'evaluation_bank.npz')
         cls.days = CURRENT_RESULT / 'evaluation/joint_reserve'

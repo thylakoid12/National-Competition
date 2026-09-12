@@ -1,0 +1,59 @@
+{
+  "created": "2026-09-12T14:06:50.706676",
+  "model": "M3",
+  "source": "D:\\数模\\2026国赛\\Code\\q2\\结果\\statistical_risk_v1",
+  "optimization_rerun": false,
+  "workbooks_unchanged": true,
+  "main_figures": [
+    {
+      "name": "图1_M0至M3消融",
+      "section": "模型有效性与消融实验",
+      "purpose": "解释误差场景、条件权重和 TV 鲁棒的增量作用。",
+      "caption": "各模型共用统计预测、物理控制和搜索预算。绿色为一月选定的 M3；费用虚线仅为后续评价的 3% 核验线，不表示逐日费用约束。CVaR 为真实日紧急费用的经验尾部统计量。"
+    },
+    {
+      "name": "图2_四个指定日购电计划",
+      "section": "购电结果与决策解释",
+      "purpose": "把原来四张分散的指定日购电图合成一张。",
+      "caption": "四个子图对应题设指定日期，所有曲线使用同一电量单位，未使用双纵轴。实际净负荷可为负，表示光伏超过负载。实际曲线用于事后解释；日初计划仅依赖过去信息。红色为 M3 紧急购电量。"
+    },
+    {
+      "name": "图3_四个指定日储能响应",
+      "section": "储能调节机理",
+      "purpose": "配合图2解释放电和留电时机。",
+      "caption": "参考库存是控制器的放电保留阈值，不要求实际库存始终高于参考线。各模型从共同评价初始状态出发，此后沿用各自真实日末库存，因此指定日的日初库存可以不同。库存不能按时段电量乘 6 换算为功率。"
+    },
+    {
+      "name": "图4_事前风险与实际费用",
+      "section": "风险评估与校准",
+      "purpose": "展示风险提示与实测损失的对应关系。",
+      "caption": "事前 VaR/CVaR 仅使用当时可用的历史误差场景。真实费用超过事前 VaR 的比例为 42/334=12.57%，名义参考为 10%。这是一项校准诊断，CVaR 不是每日费用上界。"
+    },
+    {
+      "name": "图5_六类压力测试",
+      "section": "压力抗性与局限",
+      "purpose": "比较相同冲击下的应急依赖，保留退化案例。",
+      "caption": "各面板纵轴独立。联合三日冲击为负载 +15%、光伏 −40%；低库存三日为负载 +10%、光伏 −30%。两类均包含两天恢复期。低库存初值为 2160 kWh，其余为 6000 kWh。首日执行冲击前同一锁定计划。人工冲击没有发生概率，案例合计不能解释为年期望损失；当前允许无限紧急补购。"
+    }
+  ],
+  "files": {
+    "00_从这里开始.html": "230d188c0ee7821871ecfb813c73ebb8d8f9d09d619ed5ad1f17bbe4f14f7431",
+    "result2.xlsx": "a27ea7edd234a2b2ce9e9a26e287bc1075d61bf2fe4ab37e390575515a79e8e7",
+    "正文图.zip": "d60f8b3d16e8bfb55b024a7e5ca2945473c825e6ec7fb53c8bc66b6dd2e783b4",
+    "论文结果表.xlsx": "ee40fafd47b3b7980a98b93e4854a53af558767708eba28ed74366bab692eebf",
+    "正文图\\图1_M0至M3消融.png": "fcc22884a9d289562efe2cb448634435e4b303c2c929e466cb0788a26f8547af",
+    "正文图\\图2_四个指定日购电计划.png": "85ff2d1ec1106e0a5980ce155459fe4313840dc002d451c1ea50641a97fc0acd",
+    "正文图\\图3_四个指定日储能响应.png": "7be3f350dab358481895c007c352ea1fc5076180c9b922f76f99c5f8bc3aa313",
+    "正文图\\图4_事前风险与实际费用.png": "36231e3fbc175badf471fb006e9821c20ac7da19df34c968ab4b01357b5d331e",
+    "正文图\\图5_六类压力测试.png": "c5391072b3e966ea32b5f41f950b7c23ed3cd135a607c01d8ed03859fec7fbb5"
+  },
+  "html_analysis_updated": "2026-09-12T15:26:25.974297",
+  "analysis_sources": {
+    "stress_summary.json": "2e7d0941e4f47a0dcad32d7d788bc030636fce4d2d833fbd47a47ac87b5af341",
+    "report\\论文补充分析.json": "cee5ef708397c2a7075189603a04cc39d71b7e1e40f96c6f94490599d7b6593a",
+    "selection_frozen.json": "4da30bb960764d64f53f628a16aa4a2f954a547cae61112d52075f683b0f7a2a",
+    "audit\\表6与本次预测误差核对.json": "ead16036db49a25cb5f4fced1b879d832182f670c319cdb355c7b590b2ea4624"
+  },
+  "html_archive_updated": true,
+  "modeling_example_sha256": "cec493ead996e553069a8ef0e2adc4beaa51a9fa6926c68c478af9fa24d5f5bb"
+}

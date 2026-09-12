@@ -1,0 +1,30 @@
+{
+  "M2": {
+    "objective": 28506.287313708657,
+    "alpha": 0.3500000000000001,
+    "risk_budget": null,
+    "risk_cvar": null,
+    "stress_budget": null,
+    "stress_cost": null,
+    "feasible": true,
+    "cash_cost": 21931.87573169259,
+    "H": 0.0,
+    "Eend": 3175.5356801640874,
+    "evaluations": 3000,
+    "seconds": 6.410382900037803
+  },
+  "M3-RS": {
+    "objective": 61381.701299175795,
+    "alpha": 0.0,
+    "risk_budget": 17793.047663200246,
+    "risk_cvar": 17792.810855928506,
+    "stress_budget": 26689.57149480037,
+    "stress_cost": 0.0,
+    "feasible": true,
+    "cash_cost": 63255.58240973382,
+    "H": 0.0,
+    "Eend": 10800.0,
+    "evaluations": 3000,
+    "seconds": 5.790627600043081
+  }
+}

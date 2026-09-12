@@ -1,54 +1,34 @@
 # National-Competition
 
-2026 国赛 C 题代码，第一题和第二题分别存放。
+2026 国赛 C 题代码。当前本机使用 Anaconda 环境 **CUMCM**。
 
-| 目录 | 内容 | 入口 |
+**论文取图与提交入口：[论文用结果](论文用结果/00_从这里开始.html)。** 已集中为两个结果表、五张正文图和一个重绘资料包；入口说明每张图放在哪里，并列明与附件 5 示例的时间表头差异。
+
+HTML 顶部新增第二问建模正文示例，依次解释统计预测、误差场景、计划执行、鲁棒目标、滚动更新与风险选型。下载后用浏览器打开 HTML 即可阅读；GitHub 文件页显示的是源码。
+
+仓库提供源码、论文图表、重绘资料及[精简实验记录](q2/结果/statistical_risk_v1/README.md)。约 457 MB 的完整逐日记录保留在本机，不随 Git 上传。换电脑重跑时请提供原始附件并使用新的输出目录，例如 `python -X utf8 run.py run-all --workers 7 --output ../结果/statistical_risk_v2`。
+
+**真实附件在 `D:\数模\2026国赛`，即 `Code` 上一级。** [数据位置说明](数据位置说明.md) 列出了原始文件、运行缓存与核验记录的对应关系。附件不随源码仓库提供，当前模型读取本机已有 Excel。
+
+| 目录 | 内容 | 说明 |
 | --- | --- | --- |
-| [q1/代码](q1/代码/) | 第一题：预处理、储能调度模型、绘图、表格导出与扩展分析 | `preprocess.py` → `q1.py` |
-| [q2/代码](q2/代码/) | 第二题：A/B 模型、预测优化、滚动控制、Excel 导出与绘图 | `run.py` |
+| [q1/代码](q1/代码/) | 问题一：预处理、储能优化、绘图与导出 | [原运行说明](q1/代码/README.md) |
+| [q2/代码](q2/代码/) | 问题二：统计预测、M0—M3 消融、风险限额、压力测试 | [新运行说明](q2/代码/README.md) |
+| [q2/结果/statistical_risk_v1](q2/结果/statistical_risk_v1/) | 当前统计风险实验，逐日落盘、支持续跑 | [模型与风险结果](q2/结果/statistical_risk_v1/report/模型与风险结果.md) |
+| [output/review](output/review/) | 原论文核查、调整方案、代码备份与数据溯源 | [调整方案](output/review/问题二统计风险模型调整方案.md) |
 
-第一题说明见 [q1/代码/README.md](q1/代码/README.md)，第二题说明见 [q2/README.md](q2/README.md)。根目录的 `preprocess.py` 是仓库原有脚本；本次两题代码以各自目录为准。
-
-## 数据位置
-
-代码需要题目原始附件，附件、运行结果和虚拟环境未随此次源码上传。运行前，将 C 题的完整 `附件` 文件夹放在仓库根目录：
-
-```text
-National-Competition/
-├── 附件/
-│   ├── 附件1.xlsx
-│   ├── 附件2.xlsx
-│   ├── 附件3.xlsx
-│   ├── 附件4.xlsx
-│   └── 附件5/            # 官方结果模板
-├── q1/
-│   └── 代码/
-└── q2/
-    └── 代码/
-```
-
-## 第一题
-
-在仓库根目录打开终端：
+在仓库根目录打开 Anaconda Prompt 或已初始化 conda 的 PowerShell：
 
 ```powershell
-cd q1/代码
-python -m pip install -r requirements.txt
-python preprocess.py
-python q1.py
+conda activate CUMCM
+cd q2/代码
+python -X utf8 run.py run-all --workers 7
+python -X utf8 run.py plot
+python -X utf8 run.py export --model selected
 ```
 
-预处理输出位于 `q1/outputs/`，模型结果位于 `q1/results/`。
+`run-all` 依次进行一月验证选型、二月至十二月连续回测、留出压力测试和报告生成；已有且哈希一致的检查点会复用。费用增幅上限是相对 M2 的 **3%**，在一月验证期筛选，并在后续评价期独立核验。提交 Excel 需完成全部 334 天后单独导出。
 
-## 第二题
+主线没有机器学习预测器。CPU 按模型并行，Numba 加速场景回放；当前求解器没有启用 GPU。历史 A/B/C 入口保留在 `q2/代码/legacy_run.py`，与新的 M0—M3 实验不混用。
 
-在仓库根目录打开终端，推荐 Python 3.12：
-
-```powershell
-cd q2
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r 代码/requirements.txt
-.\.venv\Scripts\python.exe -X utf8 代码/run.py run-model --model A
-```
-
-结果及检查点位于 `q2/结果/`。模型 B 使用 `run-model --model B`；已有结果可用 `export-excel --model all` 导出，`plot` 生成模型 B 图件。完整年度计算可能耗时较长，支持断点续跑。测试依赖本地已有计算结果；Excel 导出另需配置文档 Python、Node 和 @oai/artifact-tool，详见 [第二题运行说明](q2/代码/README.md)。
+换电脑可将附件放在 `Code/附件/`，或通过 `--attachments` 显式指定含附件 1、附件 2 的目录；导出还需要其中的 `附件5/result2.xlsx`。不要将缺少数据的单元测试误当成真实年度回测。

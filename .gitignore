@@ -7,3 +7,16 @@ q1/outputs/
 q1/results/
 q1/数据处理/
 q2/result/
+node_modules/
+.environment-check/
+.idea/
+/tmp/
+*.nbc
+*.nbi
+/附件/
+/附件*.xlsx
+/output/*
+!/output/review/
+/output/review/*
+!/output/review/*.md
+!/output/review/*.json

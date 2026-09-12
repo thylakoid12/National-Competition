@@ -1,0 +1,10 @@
+name: CUMCM
+channels:
+  - defaults
+dependencies:
+  - python=3.12.14
+  - pip
+  - pip:
+      - -r requirements-CUMCM.lock.txt
+variables:
+  PYTHONUTF8: "1"

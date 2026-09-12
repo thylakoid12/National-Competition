@@ -89,7 +89,7 @@ class Forecaster:
         self.scored_days = 0
         self.frozen = None
 
-    def issue(self, history, date, use_ml=True):
+    def issue(self, history, date, use_ml=False):
         if date >= "2025-02-01" and self.frozen is None:
             self.frozen = [int(np.argmin(s)) for s in self.scores]
         arrays = [candidates(history, t)[0] for t in (0, 1)]
@@ -115,7 +115,7 @@ class Forecaster:
         return dict(
             methods=[LOAD_METHODS[chosen[0]], PV_METHODS[chosen[1]]],
             candidates=[list(LOAD_METHODS), list(PV_METHODS)],
-            mae=[(s / self.scored_days).tolist() for s in self.scores],
+            mae=[(s / max(1, self.scored_days)).tolist() for s in self.scores],
             scored_days=self.scored_days,
         )
 
@@ -158,3 +158,58 @@ def rolling(current, losses):
     w = 1 / np.maximum(scores[idx], 1e-08) ** 2
     w /= w.sum()
     return (w @ current[idx], idx.tolist(), w.tolist())
+
+
+class StatisticalForecaster:
+    """因果统计预测：原统计选型 + 有界的近期逐时偏差修正。"""
+
+    def __init__(self, cfg):
+        self.cfg = cfg
+        self.base = Forecaster(cfg)
+        self.base_errors = []
+        self.last_date = None
+        self.pending = None
+
+    def issue(self, history, date):
+        if self.pending is not None:
+            raise ValueError("Settle the previous issued forecast before issuing another")
+        if not len(history) or (self.last_date is not None and date <= self.last_date):
+            raise ValueError("A completed, chronologically earlier history is required")
+        base = self.base.issue(history, date, use_ml=False)
+        path = base["f0"].copy()
+        correction = np.zeros_like(path)
+        if self.base_errors:
+            error = np.mean(self.base_errors[-self.cfg.forecast_bias_window:], axis=0)
+            cap = self.cfg.forecast_bias_cap * np.maximum(path, history[-7:].mean(axis=0))
+            correction = np.clip(self.cfg.forecast_bias_strength * error, -cap, cap)
+        path = np.maximum(path + correction, 0.0)
+        # 掩码来自过去光伏，绝不读取当天实测太阳时段。
+        night = np.max(history[-30:, :, 1], axis=0) <= 1e-10
+        path[night, 1] = 0.0
+        forecast = dict(path=path, context=base["context"], meta=dict(
+            date=date, train_end=(Date.fromisoformat(date) - timedelta(days=1)).isoformat(),
+            methods=self.base.report()["methods"], history_days=len(history),
+            bias_days=min(len(self.base_errors), self.cfg.forecast_bias_window),
+            bias_strength=self.cfg.forecast_bias_strength,
+            base_daily_kwh=base["f0"].sum(axis=0).tolist(),
+            correction_daily_kwh=(path-base["f0"]).sum(axis=0).tolist(),
+            night_slots=np.flatnonzero(night).tolist(),
+            predictor="statistical_only"))
+        self.pending = (date, base, forecast)
+        return forecast
+
+    def settle(self, actual, date):
+        if self.pending is None or self.pending[0] != date:
+            raise ValueError("Settlement must match the issued forecast date")
+        _, base, forecast = self.pending
+        actual = np.asarray(actual, dtype=float)
+        if actual.shape != forecast["path"].shape or not np.isfinite(actual).all():
+            raise ValueError("Invalid realized path")
+        self.base_errors.append(actual - base["f0"])
+        self.base_errors = self.base_errors[-self.cfg.forecast_bias_window:]
+        self.base.settle(base, actual, date)
+        self.last_date, self.pending = date, None
+
+    def report(self):
+        return dict(**self.base.report(), predictor="statistical_only",
+                    bias_strength=self.cfg.forecast_bias_strength)

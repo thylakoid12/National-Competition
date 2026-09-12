@@ -1,0 +1,158 @@
+{
+  "schema": "statistical-risk-v1",
+  "config": {
+    "e_min": 1200,
+    "e_max": 10800,
+    "initial_energy": 6000,
+    "power": 5000,
+    "eta_c": 0.9,
+    "eta_d": 0.9,
+    "emergency_multiplier": 5.0,
+    "residual_window": 60,
+    "bandwidth": 1.0,
+    "shrinkage": 0.25,
+    "radius": 0.05,
+    "ml_min_days": 14,
+    "ml_window": 120,
+    "ml_depth": 4,
+    "ml_iterations": 300,
+    "ml_learning_rate": 0.05,
+    "seed": 2026,
+    "seed_time_limit_seconds": 5.0,
+    "seed_mip_gap": 0.0001,
+    "seed_node_limit": 16,
+    "objective_tolerance": 1e-07,
+    "physical_tolerance": 1e-06,
+    "terminal_multiplier": 1.0,
+    "forecast_bias_window": 7,
+    "forecast_bias_strength": 0.25,
+    "forecast_bias_cap": 0.25,
+    "residual_scale": false,
+    "scale_recent_window": 14,
+    "scale_min": 0.67,
+    "scale_max": 1.5,
+    "risk_beta": 0.9,
+    "risk_budget_ratio": 0.5,
+    "stress_budget_ratio": 0.75,
+    "cost_premium": 0.03,
+    "search_evaluations": 3000,
+    "search_starts": 3,
+    "search_step_scales": [
+      0.1,
+      0.02,
+      0.005
+    ],
+    "bootstrap_block_days": 3,
+    "bootstrap_repetitions": 300
+  },
+  "attachments": "D:\\数模\\2026国赛",
+  "data_hashes": {
+    "附件1.xlsx": "7590f3a372938c48d164b2a6615ffe2bec2a4b69b874a9e1fa93504d424b6df3",
+    "附件2.xlsx": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72"
+  },
+  "code_hashes": {
+    "config.py": "73a55da6099c5d70cc33f18a5f27ddc9b524df011a30a5db296bfdf061f88d77",
+    "models.py": "286bbe1cc765c4d0f6758e8f46facc831b3c00156319ad1ae2b604aa54a477de",
+    "data.py": "ac28a4ae420595700c906ab9d62dd2373a04c88c6c9b62b9cabc94ca9b0700b5",
+    "forecast.py": "d4b6f5e39eb6ce7b7f61e4da38f52013708da07e2ac1ba9ad5726846dab0dc08",
+    "scenarios.py": "9e746f04eb107cd9e7b13bff8bead74953cf2a24221141ac366dcaaf9024732d",
+    "risk.py": "8a811a8c1c6508c7b2b41f6a3b2ecf5aaf8f8a4494edb2a74c3eadf8d824893e",
+    "solver.py": "f37e65dd86719e75491a40e38ee8405b0f99c8470d6e0dc362ffa22485f22264",
+    "controller.py": "0765a6fd2e5eaddf25b0e4b15294394b555837dccfff581621d48371734ecfd6",
+    "optimizer.py": "6c61a949217c50d63731727b7a8787899f1408dd36c8dc0a5dac58029273ecb7",
+    "seed.py": "4778aa1dd0bcbe95e63d024366b1e126413c002dfb9e6fa1265833bde75a781b",
+    "seed_model.py": "08ac81d1fde58a37b69b0905ab63615c3beb5da3f61f2ef7d9e0c2735f728850",
+    "stress.py": "6fd1936c12ccbe50020ee509670041fc3c36160bd98ce621529e8ac4531b1c1f",
+    "metrics.py": "e3eac5638b53344cdeb2e887b0c4223a4c7f7f31ceff170b00e584af0de85661",
+    "statistical_experiment.py": "872767684f3b87a0507c13ee0c2fda28f005cc68cd9ca3b7167c13f40c4c6f10"
+  },
+  "validation": [
+    "2025-01-15",
+    "2025-01-31"
+  ],
+  "evaluation": [
+    "2025-02-01",
+    "2025-12-31"
+  ],
+  "development_shocks": [
+    {
+      "name": "dev_load_10",
+      "load_factor": 1.1,
+      "pv_factor": 1.0,
+      "peak_factor": 1.0,
+      "duration": 1,
+      "initial_fraction": null
+    },
+    {
+      "name": "dev_pv_30",
+      "load_factor": 1.0,
+      "pv_factor": 0.7,
+      "peak_factor": 1.0,
+      "duration": 1,
+      "initial_fraction": null
+    },
+    {
+      "name": "dev_joint_10_30",
+      "load_factor": 1.1,
+      "pv_factor": 0.7,
+      "peak_factor": 1.0,
+      "duration": 1,
+      "initial_fraction": null
+    }
+  ],
+  "heldout_shocks": [
+    {
+      "name": "test_load_20",
+      "load_factor": 1.2,
+      "pv_factor": 1.0,
+      "peak_factor": 1.0,
+      "duration": 1,
+      "initial_fraction": null
+    },
+    {
+      "name": "test_pv_50",
+      "load_factor": 1.0,
+      "pv_factor": 0.5,
+      "peak_factor": 1.0,
+      "duration": 1,
+      "initial_fraction": null
+    },
+    {
+      "name": "test_peak_30",
+      "load_factor": 1.0,
+      "pv_factor": 1.0,
+      "peak_factor": 1.3,
+      "duration": 1,
+      "initial_fraction": null
+    },
+    {
+      "name": "test_joint_15_40",
+      "load_factor": 1.15,
+      "pv_factor": 0.6,
+      "peak_factor": 1.0,
+      "duration": 1,
+      "initial_fraction": null
+    },
+    {
+      "name": "test_joint_15_40_3days",
+      "load_factor": 1.15,
+      "pv_factor": 0.6,
+      "peak_factor": 1.0,
+      "duration": 3,
+      "initial_fraction": null
+    },
+    {
+      "name": "test_low_inventory_3days",
+      "load_factor": 1.1,
+      "pv_factor": 0.7,
+      "peak_factor": 1.0,
+      "duration": 3,
+      "initial_fraction": 0.1
+    }
+  ],
+  "selection_rule": "Within M2 cash cost*(1+premium), minimize the worse normalized validation emergency CVaR and development-stress CVaR; cash breaks ties",
+  "bootstrap_rule": "Jan 1: G=0, discharge only down to E_min, emergency supply; Jan 2–31: causal statistical forecast and deterministic seed with alpha=1",
+  "retrospective_redesign": true,
+  "future_guarantee": false,
+  "online_updates": "Issued forecast residuals, bounded bias correction and past-only conditional weights; hyperparameters fixed after calibration"
+}

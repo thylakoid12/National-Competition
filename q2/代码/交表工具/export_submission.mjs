@@ -10,6 +10,14 @@ const output=data.output;
 const audit=path.join(output,"核验记录");
 await fs.mkdir(audit,{recursive:true});
 const book=await SpreadsheetFile.importXlsx(await FileBlob.load(data.template));
+const sourceCheck=await book.inspect({kind:"workbook,sheet,table",maxChars:1800,tableMaxRows:2,tableMaxCols:4});
+await fs.writeFile(path.join(audit,"模板结构.ndjson"),sourceCheck.ndjson);
+if(process.argv.includes("--render")){
+  for(const name of ["计划购电量","充放电量","紧急购电量"]){
+    const preview=await book.render({sheetName:name,range:name==="紧急购电量"?"A1:C5":"A1:F5",scale:1.2,format:"png"});
+    await fs.writeFile(path.join(audit,"模板_"+name+".png"),new Uint8Array(await preview.arrayBuffer()));
+  }
+}
 
 for(const [name,key] of [["计划购电量","purchase"],["充放电量","storage"],["紧急购电量","emergency"]]){
   const sheet=book.worksheets.getItem(name), rows=data[key];
@@ -59,10 +67,16 @@ for(const [name,rows] of Object.entries(data.paper)){
     sheet.getRangeByIndexes(0,0,rows.length,1).format.columnWidth=32;
     sheet.getRangeByIndexes(0,1,rows.length,1).format.columnWidth=53;
     sheet.getRange("B2:B4").format.horizontalAlignment="left";
+    sheet.getRange("B3:B4").format.wrapText=true;
+    sheet.getRange("A3:B4").format.rowHeight=46;
     heading(0);heading(4);
     for(let i=5;i<rows.length;i++){
       if(rows[i][0]==="光伏消纳率")sheet.getCell(i,1).setNumberFormat("0.0000%");
       if(rows[i][0].includes("天数")||rows[i][0].includes("时段数"))sheet.getCell(i,1).setNumberFormat("0");
+      if(typeof rows[i][1]==="string"){
+        sheet.getCell(i,1).format.wrapText=true;
+        sheet.getRangeByIndexes(i,0,1,2).format.rowHeight=44;
+      }
     }
   }else if(name==="表3_紧急购电"){
     heading(0);
@@ -81,13 +95,19 @@ for(const [name,rows] of Object.entries(data.paper)){
 }
 await book.recalculate();
 await paper.recalculate();
+for(const [wb,name] of [[book,"result2"],[paper,"论文结果表"]]){
+  const errors=await wb.inspect({kind:"match",searchTerm:"#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A|#NUM!|#NULL!|#SPILL!|#CALC!",options:{useRegex:true,maxResults:30},maxChars:2500});
+  await fs.writeFile(path.join(audit,name+"_公式错误检查.ndjson"),errors.ndjson);
+  const checks=await wb.inspect({kind:"table",range:name==="result2"?"计划购电量!A1:F5":"评价期汇总!A1:B8",include:"values,formulas",tableMaxRows:8,tableMaxCols:6,maxChars:2500});
+  await fs.writeFile(path.join(audit,name+"_数值检查.ndjson"),checks.ndjson);
+}
 for(const [wb,name] of [[book,"result2.xlsx"],[paper,"论文结果表.xlsx"]]){
   const file=await SpreadsheetFile.exportXlsx(wb);
   await file.save(path.join(output,name));
 }
 const views=[
  [book,"计划购电量","A1:F6"],[book,"充放电量","A1:F13"],[book,"紧急购电量","A1:C12"],
- [paper,"评价期汇总","A1:B17"],[paper,"表1_购电结果","A1:F12"],
+ [paper,"评价期汇总","A1:B"+data.paper["评价期汇总"].length],[paper,"表1_购电结果","A1:F12"],
  [paper,"表2_储能结果","A1:F14"],[paper,"表3_紧急购电","A1:H"+data.paper["表3_紧急购电"].length]
 ];
 const previews=process.argv.includes("--render")?views:process.argv.includes("--render-paper")?views.filter(v=>v[0]===paper&&v[1]!=="评价期汇总"):[];

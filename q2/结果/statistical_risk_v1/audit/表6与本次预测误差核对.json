@@ -1,0 +1,138 @@
+{
+  "old_table6_comparison": [
+    {
+      "target": "负载",
+      "method": "previous_day",
+      "old_mae_kw": 669.695,
+      "new_mae_kw": 669.6954152314813,
+      "new_3dp": 669.695,
+      "matches_display": true
+    },
+    {
+      "target": "负载",
+      "method": "previous_week",
+      "old_mae_kw": 301.765,
+      "new_mae_kw": 301.7649220011574,
+      "new_3dp": 301.765,
+      "matches_display": true
+    },
+    {
+      "target": "负载",
+      "method": "weekday_2",
+      "old_mae_kw": 290.41,
+      "new_mae_kw": 290.4101649409722,
+      "new_3dp": 290.41,
+      "matches_display": true
+    },
+    {
+      "target": "负载",
+      "method": "weekday_3",
+      "old_mae_kw": 288.054,
+      "new_mae_kw": 288.0540379849537,
+      "new_3dp": 288.054,
+      "matches_display": true
+    },
+    {
+      "target": "负载",
+      "method": "mean_7",
+      "old_mae_kw": 810.208,
+      "new_mae_kw": 810.2082343887236,
+      "new_3dp": 810.208,
+      "matches_display": true
+    },
+    {
+      "target": "光伏",
+      "method": "mean_1",
+      "old_mae_kw": 105.978,
+      "new_mae_kw": 105.97764870370366,
+      "new_3dp": 105.978,
+      "matches_display": true
+    },
+    {
+      "target": "光伏",
+      "method": "mean_3",
+      "old_mae_kw": 89.502,
+      "new_mae_kw": 89.50238261188272,
+      "new_3dp": 89.502,
+      "matches_display": true
+    },
+    {
+      "target": "光伏",
+      "method": "mean_7",
+      "old_mae_kw": 87.048,
+      "new_mae_kw": 87.04841065068341,
+      "new_3dp": 87.048,
+      "matches_display": true
+    },
+    {
+      "target": "光伏",
+      "method": "mean_14",
+      "old_mae_kw": 92.753,
+      "new_mae_kw": 92.75281368077094,
+      "new_3dp": 92.753,
+      "matches_display": true
+    },
+    {
+      "target": "光伏",
+      "method": "linear_7",
+      "old_mae_kw": 96.885,
+      "new_mae_kw": 96.88534549735448,
+      "new_3dp": 96.885,
+      "matches_display": true
+    },
+    {
+      "target": "光伏",
+      "method": "linear_14",
+      "old_mae_kw": 90.386,
+      "new_mae_kw": 90.38596292931823,
+      "new_3dp": 90.386,
+      "matches_display": true
+    }
+  ],
+  "all_11_values_match_at_3_decimals": true,
+  "scored_days": 30,
+  "table6_unit": "kW; saved report values are kWh per ten-minute interval and multiplied by 6",
+  "table6_definition": "基础统计候选规则在1月2—31日逐日预测的MAE；未加偏差修正。各规则均按当时可用历史生成预测。",
+  "deployed_forecast_comparison": [
+    {
+      "period": "一月实际滚动发布：1月2—31日",
+      "days": 30,
+      "base_mae_kw": [
+        345.0280625694455,
+        89.14260463957262
+      ],
+      "corrected_mae_kw": [
+        347.99434170568406,
+        88.98612582148763
+      ],
+      "change_pct": [
+        0.859721123594559,
+        -0.1755376328947067
+      ]
+    },
+    {
+      "period": "冻结基础方法后：2月1日—12月31日",
+      "days": 334,
+      "base_mae_kw": [
+        178.74429538146097,
+        153.39970672494235
+      ],
+      "corrected_mae_kw": [
+        161.64253251782662,
+        151.86637044553527
+      ],
+      "change_pct": [
+        -9.56772512775147,
+        -0.9995692378711452
+      ]
+    }
+  ],
+  "all_364_issued_forecasts_match_saved_bank": true,
+  "notes": [
+    "一月实际滚动发布的基础方法根据之前累计评分选择，因此其MAE不能直接和事后确定的最佳单一候选MAE比较并归因于修正。",
+    "二月后的两列共用冻结的weekday_3与mean_7基础规则；修正列包含有界偏差修正及历史光伏夜间掩码。",
+    "本核验仅重建预测，不重新优化购电计划。"
+  ],
+  "source_report_sha256": "6b8eebefa9fc6f969216d40bb08da96925edb3f62cda0695a3056f1d6d57c3ff",
+  "saved_bank_sha256": "56beac8f4e31fa0ccb53b9f7a07b8b4b674909af1467d8008422c28c8c066d93"
+}

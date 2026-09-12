@@ -1,0 +1,12 @@
+{
+  "date": "2025-02-01",
+  "future_perturbation_forecast_scenarios_weights_unchanged_within_1e-9": true,
+  "max_abs_differences": {
+    "forecast": 0.0,
+    "scenarios": 4.547473508864641e-13,
+    "weights": 0.0
+  },
+  "intraday_future_perturbation_prefix_identical": true,
+  "plan_fixed": true,
+  "scope": "独立抽样核查一个日期，未执行依赖缺失历史结果的全年回归测试。"
+}

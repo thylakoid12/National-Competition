@@ -1,0 +1,877 @@
+{
+  "created": "2026-09-12T13:47:57.435578",
+  "source": "D:\\数模\\2026国赛\\Code\\q2\\结果\\statistical_risk_v1",
+  "post_hoc_analysis": true,
+  "used_for_selection": false,
+  "optimization_rerun": false,
+  "source_daily_json_concatenation_sha256": {
+    "M0": "6be244142dce8b940980ec88077e6e28fc68f34763acab55505f20c0a0b49672",
+    "M1": "46215148101fa2850fa824c95f44ff0011ae6ef2d385dc09adc713e1a16aae17",
+    "M2": "0977e6f6ea57eefce3ccd4172003a40609ddd36e6a572c3567f831c33ecb0c6a",
+    "M3": "0706788e4f2c67273e7eb018cf3338325935297d69cc61ca73a389e1e3093de4",
+    "M3-R": "01d769852b3dc75d8bd5259b8a3f740093f08899d67f3bb621d335c22cbab098",
+    "M3-S": "a0f9ddf61800634aadbd00699e955d1817491aa8b08bddd7fece99b8f1fbbb58",
+    "M3-RS": "787e934b2b9a5b725b001c71c9614fd6bd748c0763a32a352035146c8290ec7f"
+  },
+  "analysis_script_sha256": "e07d6e313c2b2dfb16910330630820979378b05b99bf07e7025b36b72c1bb3ae",
+  "stress_summary_sha256": "2e7d0941e4f47a0dcad32d7d788bc030636fce4d2d833fbd47a47ac87b5af341",
+  "days": 334,
+  "beta": 0.9,
+  "summaries": {
+    "M0": {
+      "model": "M0",
+      "complete": true,
+      "G": 20060564.85843403,
+      "H": 551811.3173627297,
+      "plan_cost": 12175625.643370269,
+      "emergency_cost": 3028368.0159239816,
+      "cash_cost": 15203993.65929425,
+      "emergency_days": 299,
+      "emergency_slots": 5713,
+      "unused": 315533.0485486694,
+      "curtailment": 1144498.0390370486,
+      "pv": 19068889.994283333,
+      "storage_loss": 1222747.692738472,
+      "days": 334,
+      "Eend": 1207.9005059029341,
+      "pv_utilization": 0.9399808777867953,
+      "emergency_cvar": 41272.71950179984,
+      "daily_cash_cvar": 84733.21389751282,
+      "development_stress_cvar": 186486.24114105292,
+      "worst_daily_emergency_cost": 86036.11855708215,
+      "worst_daily_cash_cost": 125660.74390078064,
+      "min_energy": 1199.9999999999945,
+      "peak_emergency_kw": 5947.726620238095,
+      "risk_budget_unmet_days": 0,
+      "max_physical_residual": 5.4569682106375694e-12,
+      "var_exceedance_rate": 0.10778443113772455,
+      "expected_var_exceedance_rate": 0.09999999999999998,
+      "beta": 0.9,
+      "small_tail_sample": false,
+      "start_date": "2025-02-01",
+      "end_date": "2025-12-31",
+      "emergency_cvar_bootstrap_interval": [
+        29605.12972996626,
+        51761.63244989978
+      ],
+      "bootstrap_note": "移动日块重采样敏感性区间；不增加独立历史样本，不构成未来安全保证"
+    },
+    "M1": {
+      "model": "M1",
+      "complete": true,
+      "G": 21049968.66436183,
+      "H": 135875.01255775706,
+      "plan_cost": 13225572.99712049,
+      "emergency_cost": 792044.953981036,
+      "cash_cost": 14017617.951101527,
+      "emergency_days": 112,
+      "emergency_slots": 1133,
+      "unused": 762372.7078674876,
+      "curtailment": 1344951.7030531513,
+      "pv": 19068889.994283333,
+      "storage_loss": 1148890.2933051707,
+      "days": 334,
+      "Eend": 1239.4777271139455,
+      "pv_utilization": 0.9294687995233937,
+      "emergency_cvar": 19852.508939949927,
+      "daily_cash_cvar": 69366.17690475106,
+      "development_stress_cvar": 156547.99130151077,
+      "worst_daily_emergency_cost": 71034.40291311758,
+      "worst_daily_cash_cost": 108344.94067061933,
+      "min_energy": 1199.9999999999989,
+      "peak_emergency_kw": 4582.595710882652,
+      "risk_budget_unmet_days": 0,
+      "max_physical_residual": 1.1368683772161603e-12,
+      "var_exceedance_rate": 0.11976047904191617,
+      "expected_var_exceedance_rate": 0.09999999999999998,
+      "beta": 0.9,
+      "small_tail_sample": false,
+      "start_date": "2025-02-01",
+      "end_date": "2025-12-31",
+      "emergency_cvar_bootstrap_interval": [
+        11253.002486112548,
+        28342.515392287685
+      ],
+      "bootstrap_note": "移动日块重采样敏感性区间；不增加独立历史样本，不构成未来安全保证"
+    },
+    "M2": {
+      "model": "M2",
+      "complete": true,
+      "G": 21117854.221429907,
+      "H": 111956.18281281745,
+      "plan_cost": 13253322.331863625,
+      "emergency_cost": 646379.3026668167,
+      "cash_cost": 13899701.634530442,
+      "emergency_days": 97,
+      "emergency_slots": 899,
+      "unused": 793139.3845899737,
+      "curtailment": 1347930.186659802,
+      "pv": 19068889.994283333,
+      "storage_loss": 1159095.1791561295,
+      "days": 334,
+      "Eend": 1256.1588701535889,
+      "pv_utilization": 0.9293126035619327,
+      "emergency_cvar": 17016.49361483418,
+      "daily_cash_cvar": 68134.04862898082,
+      "development_stress_cvar": 154969.93910746637,
+      "worst_daily_emergency_cost": 68342.96598577665,
+      "worst_daily_cash_cost": 105775.22123004516,
+      "min_energy": 1199.9999999999986,
+      "peak_emergency_kw": 4365.042300000001,
+      "risk_budget_unmet_days": 0,
+      "max_physical_residual": 1.3642420526593924e-12,
+      "var_exceedance_rate": 0.11976047904191617,
+      "expected_var_exceedance_rate": 0.09999999999999998,
+      "beta": 0.9,
+      "small_tail_sample": false,
+      "start_date": "2025-02-01",
+      "end_date": "2025-12-31",
+      "emergency_cvar_bootstrap_interval": [
+        9298.881629300538,
+        25122.968933766504
+      ],
+      "bootstrap_note": "移动日块重采样敏感性区间；不增加独立历史样本，不构成未来安全保证"
+    },
+    "M3": {
+      "model": "M3",
+      "complete": true,
+      "G": 21356156.846961357,
+      "H": 92935.42196567664,
+      "plan_cost": 13468716.88857985,
+      "emergency_cost": 520528.95384167426,
+      "cash_cost": 13989245.842421522,
+      "emergency_days": 97,
+      "emergency_slots": 886,
+      "unused": 973000.3024161669,
+      "curtailment": 1415698.0819709408,
+      "pv": 19068889.994283333,
+      "storage_loss": 1130803.4204321026,
+      "days": 334,
+      "Eend": 1200.9691411570775,
+      "pv_utilization": 0.925758757725523,
+      "emergency_cvar": 13540.876075207922,
+      "daily_cash_cvar": 66671.96194772818,
+      "development_stress_cvar": 149423.09975341905,
+      "worst_daily_emergency_cost": 68099.31593493847,
+      "worst_daily_cash_cost": 105872.59662529815,
+      "min_energy": 1199.9999999999982,
+      "peak_emergency_kw": 4906.864493367348,
+      "risk_budget_unmet_days": 0,
+      "max_physical_residual": 1.8189894035458565e-12,
+      "var_exceedance_rate": 0.12574850299401197,
+      "expected_var_exceedance_rate": 0.09999999999999998,
+      "beta": 0.9,
+      "small_tail_sample": false,
+      "start_date": "2025-02-01",
+      "end_date": "2025-12-31",
+      "emergency_cvar_bootstrap_interval": [
+        7379.277186756223,
+        20483.657201904225
+      ],
+      "bootstrap_note": "移动日块重采样敏感性区间；不增加独立历史样本，不构成未来安全保证"
+    },
+    "M3-R": {
+      "model": "M3-R",
+      "complete": true,
+      "G": 22312139.793517083,
+      "H": 77804.77371774205,
+      "plan_cost": 14773798.609937899,
+      "emergency_cost": 435886.51635611744,
+      "cash_cost": 15209685.126294017,
+      "emergency_days": 87,
+      "emergency_slots": 764,
+      "unused": 1951471.017983071,
+      "curtailment": 1537278.4157082902,
+      "pv": 19068889.994283333,
+      "storage_loss": 971532.7023802168,
+      "days": 334,
+      "Eend": 1272.9361965819646,
+      "pv_utilization": 0.9193829102706476,
+      "emergency_cvar": 11293.063576551056,
+      "daily_cash_cvar": 84453.73922723073,
+      "development_stress_cvar": 144241.89187718066,
+      "worst_daily_emergency_cost": 61040.673342246984,
+      "worst_daily_cash_cost": 100322.66487054396,
+      "min_energy": 1199.9999999999986,
+      "peak_emergency_kw": 5398.4,
+      "risk_budget_unmet_days": 0,
+      "max_physical_residual": 1.3642420526593924e-12,
+      "var_exceedance_rate": 0.1317365269461078,
+      "expected_var_exceedance_rate": 0.09999999999999998,
+      "beta": 0.9,
+      "small_tail_sample": false,
+      "start_date": "2025-02-01",
+      "end_date": "2025-12-31",
+      "emergency_cvar_bootstrap_interval": [
+        6263.434247165554,
+        16363.66088008008
+      ],
+      "bootstrap_note": "移动日块重采样敏感性区间；不增加独立历史样本，不构成未来安全保证"
+    },
+    "M3-S": {
+      "model": "M3-S",
+      "complete": true,
+      "G": 23870884.30085106,
+      "H": 13754.838624964877,
+      "plan_cost": 16969608.971512135,
+      "emergency_cost": 65985.82900473377,
+      "cash_cost": 17035594.80051687,
+      "emergency_days": 44,
+      "emergency_slots": 338,
+      "unused": 2894595.4019395676,
+      "curtailment": 2449290.5243897233,
+      "pv": 19068889.994283333,
+      "storage_loss": 604380.4900005494,
+      "days": 334,
+      "Eend": 7983.228179517315,
+      "pv_utilization": 0.8715556844093182,
+      "emergency_cvar": 1933.9842711176523,
+      "daily_cash_cvar": 69160.99212490577,
+      "development_stress_cvar": 76280.15835281316,
+      "worst_daily_emergency_cost": 10727.234880237706,
+      "worst_daily_cash_cost": 74097.8090158562,
+      "min_energy": 1199.999999999999,
+      "peak_emergency_kw": 1610.735809523809,
+      "risk_budget_unmet_days": 0,
+      "max_physical_residual": 9.094947017729282e-13,
+      "var_exceedance_rate": 0.02694610778443114,
+      "expected_var_exceedance_rate": 0.09999999999999998,
+      "beta": 0.9,
+      "small_tail_sample": false,
+      "start_date": "2025-02-01",
+      "end_date": "2025-12-31",
+      "emergency_cvar_bootstrap_interval": [
+        993.8521394297172,
+        3115.923632905859
+      ],
+      "bootstrap_note": "移动日块重采样敏感性区间；不增加独立历史样本，不构成未来安全保证"
+    },
+    "M3-RS": {
+      "model": "M3-RS",
+      "complete": true,
+      "G": 24564059.700213507,
+      "H": 14558.058951311341,
+      "plan_cost": 17779854.46623957,
+      "emergency_cost": 69253.5108076723,
+      "cash_cost": 17849107.977047246,
+      "emergency_days": 39,
+      "emergency_slots": 332,
+      "unused": 3634278.7574819876,
+      "curtailment": 2473728.4426420964,
+      "pv": 19068889.994283333,
+      "storage_loss": 534237.8358945525,
+      "days": 334,
+      "Eend": 7983.228179517315,
+      "pv_utilization": 0.8702741248502825,
+      "emergency_cvar": 2051.328470244372,
+      "daily_cash_cvar": 83496.75903441575,
+      "development_stress_cvar": 76511.05690033594,
+      "worst_daily_emergency_cost": 10727.234880237706,
+      "worst_daily_cash_cost": 95661.44146729248,
+      "min_energy": 1200.0,
+      "peak_emergency_kw": 1610.735809523809,
+      "risk_budget_unmet_days": 0,
+      "max_physical_residual": 9.094947017729282e-13,
+      "var_exceedance_rate": 0.029940119760479042,
+      "expected_var_exceedance_rate": 0.09999999999999998,
+      "beta": 0.9,
+      "small_tail_sample": false,
+      "start_date": "2025-02-01",
+      "end_date": "2025-12-31",
+      "emergency_cvar_bootstrap_interval": [
+        1101.6690255297256,
+        3221.4370365981326
+      ],
+      "bootstrap_note": "移动日块重采样敏感性区间；不增加独立历史样本，不构成未来安全保证"
+    }
+  },
+  "ablation_changes_pct": {
+    "M0_to_M1": {
+      "cash_cost": -7.80305316338703,
+      "H": -75.37654479303829,
+      "emergency_cvar": -51.899198357684696
+    },
+    "M1_to_M2": {
+      "cash_cost": -0.8412008158762752,
+      "H": -17.603552923148623,
+      "emergency_cvar": -14.285425251257433
+    },
+    "M2_to_M3": {
+      "cash_cost": 0.6442167626723005,
+      "H": -16.98946888796855,
+      "emergency_cvar": -20.42499247081302
+    }
+  },
+  "monthly_M2_M3": [
+    {
+      "month": "2025-02",
+      "days": 28,
+      "M2": {
+        "cash_cost": 1194992.6255744016,
+        "emergency_cost": 2498.44708056923,
+        "H": 449.7676438613011
+      },
+      "M3": {
+        "cash_cost": 1209156.8029413393,
+        "emergency_cost": 11278.94841913803,
+        "H": 2033.9442334527328
+      },
+      "cost_premium_pct": 1.1852941234787417,
+      "emergency_kwh_change_pct": 352.22111043629417
+    },
+    {
+      "month": "2025-03",
+      "days": 31,
+      "M2": {
+        "cash_cost": 1130358.688772561,
+        "emergency_cost": 50005.42584112703,
+        "H": 8196.87991856837
+      },
+      "M3": {
+        "cash_cost": 1120126.3974412405,
+        "emergency_cost": 35026.51936060979,
+        "H": 6869.1678435338645
+      },
+      "cost_premium_pct": -0.9052251672813316,
+      "emergency_kwh_change_pct": -16.19777388743786
+    },
+    {
+      "month": "2025-04",
+      "days": 30,
+      "M2": {
+        "cash_cost": 973458.5605606795,
+        "emergency_cost": 84409.62665711649,
+        "H": 13248.757442971599
+      },
+      "M3": {
+        "cash_cost": 975570.3633191284,
+        "emergency_cost": 66821.62467511647,
+        "H": 10497.185618943358
+      },
+      "cost_premium_pct": 0.21693812597760598,
+      "emergency_kwh_change_pct": -20.768527432645666
+    },
+    {
+      "month": "2025-05",
+      "days": 31,
+      "M2": {
+        "cash_cost": 968821.9141682053,
+        "emergency_cost": 56659.77215409803,
+        "H": 9845.04931377788
+      },
+      "M3": {
+        "cash_cost": 989004.6207242095,
+        "emergency_cost": 56198.643262774895,
+        "H": 9883.738256093555
+      },
+      "cost_premium_pct": 2.0832215147953415,
+      "emergency_kwh_change_pct": 0.3929786543733327
+    },
+    {
+      "month": "2025-06",
+      "days": 30,
+      "M2": {
+        "cash_cost": 1507673.3219129823,
+        "emergency_cost": 215977.36222057627,
+        "H": 37194.088507683104
+      },
+      "M3": {
+        "cash_cost": 1495387.4640757616,
+        "emergency_cost": 171072.88600436656,
+        "H": 29648.10316347028
+      },
+      "cost_premium_pct": -0.8148885875112533,
+      "emergency_kwh_change_pct": -20.28813084814288
+    },
+    {
+      "month": "2025-07",
+      "days": 31,
+      "M2": {
+        "cash_cost": 1555882.8952985965,
+        "emergency_cost": 75750.0180277918,
+        "H": 13523.237389252057
+      },
+      "M3": {
+        "cash_cost": 1566847.8251593243,
+        "emergency_cost": 50390.67022957376,
+        "H": 9211.328064827347
+      },
+      "cost_premium_pct": 0.7047400478442434,
+      "emergency_kwh_change_pct": -31.885185479711474
+    },
+    {
+      "month": "2025-08",
+      "days": 31,
+      "M2": {
+        "cash_cost": 1337717.6745053371,
+        "emergency_cost": 1212.7848287064649,
+        "H": 258.8378676142279
+      },
+      "M3": {
+        "cash_cost": 1372427.0553089369,
+        "emergency_cost": 0.0,
+        "H": 0.0
+      },
+      "cost_premium_pct": 2.59467161607434,
+      "emergency_kwh_change_pct": -100.0
+    },
+    {
+      "month": "2025-09",
+      "days": 30,
+      "M2": {
+        "cash_cost": 1126470.8560872555,
+        "emergency_cost": 19096.33809854432,
+        "H": 3380.7339254304306
+      },
+      "M3": {
+        "cash_cost": 1137177.642081225,
+        "emergency_cost": 12777.58841769143,
+        "H": 2433.890327203205
+      },
+      "cost_premium_pct": 0.9504716376914635,
+      "emergency_kwh_change_pct": -28.00704282300699
+    },
+    {
+      "month": "2025-10",
+      "days": 31,
+      "M2": {
+        "cash_cost": 1130161.5969024918,
+        "emergency_cost": 42422.7215287442,
+        "H": 6771.258853601687
+      },
+      "M3": {
+        "cash_cost": 1135271.5563987044,
+        "emergency_cost": 37271.749229568784,
+        "H": 6258.243220326726
+      },
+      "cost_premium_pct": 0.45214414559986427,
+      "emergency_kwh_change_pct": -7.576370130970311
+    },
+    {
+      "month": "2025-11",
+      "days": 30,
+      "M2": {
+        "cash_cost": 1256457.1373767701,
+        "emergency_cost": 19869.26737549815,
+        "H": 3942.3425867823967
+      },
+      "M3": {
+        "cash_cost": 1263068.6623206537,
+        "emergency_cost": 15375.032145970761,
+        "H": 3423.083400507383
+      },
+      "cost_premium_pct": 0.5262037794370844,
+      "emergency_kwh_change_pct": -13.171335946702056
+    },
+    {
+      "month": "2025-12",
+      "days": 31,
+      "M2": {
+        "cash_cost": 1717706.3633711608,
+        "emergency_cost": 78477.5388540448,
+        "H": 15145.229363274404
+      },
+      "M3": {
+        "cash_cost": 1725207.4526509994,
+        "emergency_cost": 64315.29209686371,
+        "H": 12676.737837318184
+      },
+      "cost_premium_pct": 0.43669217508848224,
+      "emergency_kwh_change_pct": -16.298805826883378
+    }
+  ],
+  "paired_block_bootstrap": [
+    {
+      "block_days": 3,
+      "repetitions": 3000,
+      "seed": 20260915,
+      "cvar_difference_yuan_percentile_95": [
+        -5570.435924916207,
+        -1527.2111631988332
+      ],
+      "cost_premium_pct_percentile_95": [
+        -0.02610639026640463,
+        1.2397119775221757
+      ]
+    },
+    {
+      "block_days": 7,
+      "repetitions": 3000,
+      "seed": 20260919,
+      "cvar_difference_yuan_percentile_95": [
+        -5801.192910888997,
+        -1319.58893421743
+      ],
+      "cost_premium_pct_percentile_95": [
+        -0.13035413124361622,
+        1.2891674423147652
+      ]
+    },
+    {
+      "block_days": 14,
+      "repetitions": 3000,
+      "seed": 20260926,
+      "cvar_difference_yuan_percentile_95": [
+        -5812.688189484474,
+        -1493.858322409974
+      ],
+      "cost_premium_pct_percentile_95": [
+        -0.16069817246612939,
+        1.2921093771839078
+      ]
+    }
+  ],
+  "paired_stress_cases": {
+    "emergency_kwh": {
+      "improved": 20,
+      "worsened": 4,
+      "tied": 0,
+      "cases": [
+        {
+          "anchor": "2025-03-20",
+          "shock": "test_joint_15_40",
+          "M2": 35565.23190721544,
+          "M3": 36153.72039885305,
+          "difference": 588.4884916376104
+        },
+        {
+          "anchor": "2025-03-20",
+          "shock": "test_joint_15_40_3days",
+          "M2": 61436.82522601964,
+          "M3": 53394.867118101094,
+          "difference": -8041.958107918545
+        },
+        {
+          "anchor": "2025-03-20",
+          "shock": "test_load_20",
+          "M2": 20234.124008771196,
+          "M3": 20830.852255260426,
+          "difference": 596.7282464892305
+        },
+        {
+          "anchor": "2025-03-20",
+          "shock": "test_low_inventory_3days",
+          "M2": 40425.29273643051,
+          "M3": 39610.8053856285,
+          "difference": -814.48735080201
+        },
+        {
+          "anchor": "2025-03-20",
+          "shock": "test_peak_30",
+          "M2": 5576.082848770976,
+          "M3": 5554.718558145126,
+          "difference": -21.364290625850117
+        },
+        {
+          "anchor": "2025-03-20",
+          "shock": "test_pv_50",
+          "M2": 24454.050888265876,
+          "M3": 24592.338283736404,
+          "difference": 138.28739547052828
+        },
+        {
+          "anchor": "2025-06-21",
+          "shock": "test_joint_15_40",
+          "M2": 19476.09834190107,
+          "M3": 17698.95518781467,
+          "difference": -1777.1431540863996
+        },
+        {
+          "anchor": "2025-06-21",
+          "shock": "test_joint_15_40_3days",
+          "M2": 50363.8225222178,
+          "M3": 42811.36756671045,
+          "difference": -7552.454955507354
+        },
+        {
+          "anchor": "2025-06-21",
+          "shock": "test_load_20",
+          "M2": 4664.622282026638,
+          "M3": 3090.493190800191,
+          "difference": -1574.1290912264467
+        },
+        {
+          "anchor": "2025-06-21",
+          "shock": "test_low_inventory_3days",
+          "M2": 29488.4667091094,
+          "M3": 22151.981480563547,
+          "difference": -7336.485228545855
+        },
+        {
+          "anchor": "2025-06-21",
+          "shock": "test_peak_30",
+          "M2": 2289.3287370294756,
+          "M3": 1606.2800441014751,
+          "difference": -683.0486929280005
+        },
+        {
+          "anchor": "2025-06-21",
+          "shock": "test_pv_50",
+          "M2": 14440.39202410742,
+          "M3": 12668.141686172134,
+          "difference": -1772.2503379352856
+        },
+        {
+          "anchor": "2025-09-23",
+          "shock": "test_joint_15_40",
+          "M2": 39573.473990180915,
+          "M3": 38344.75315684758,
+          "difference": -1228.7208333333328
+        },
+        {
+          "anchor": "2025-09-23",
+          "shock": "test_joint_15_40_3days",
+          "M2": 75356.5540957579,
+          "M3": 70872.4552871837,
+          "difference": -4484.098808574214
+        },
+        {
+          "anchor": "2025-09-23",
+          "shock": "test_load_20",
+          "M2": 22827.36289717111,
+          "M3": 21604.97539717111,
+          "difference": -1222.3875000000007
+        },
+        {
+          "anchor": "2025-09-23",
+          "shock": "test_low_inventory_3days",
+          "M2": 61910.75094529328,
+          "M3": 49749.136457970126,
+          "difference": -12161.614487323153
+        },
+        {
+          "anchor": "2025-09-23",
+          "shock": "test_peak_30",
+          "M2": 7190.574650013322,
+          "M3": 6872.482687454649,
+          "difference": -318.091962558673
+        },
+        {
+          "anchor": "2025-09-23",
+          "shock": "test_pv_50",
+          "M2": 28427.33723800927,
+          "M3": 27217.332899245663,
+          "difference": -1210.004338763607
+        },
+        {
+          "anchor": "2025-12-21",
+          "shock": "test_joint_15_40",
+          "M2": 26650.01658320107,
+          "M3": 24966.119971353975,
+          "difference": -1683.8966118470962
+        },
+        {
+          "anchor": "2025-12-21",
+          "shock": "test_joint_15_40_3days",
+          "M2": 48413.904321462796,
+          "M3": 44948.46050812211,
+          "difference": -3465.4438133406875
+        },
+        {
+          "anchor": "2025-12-21",
+          "shock": "test_load_20",
+          "M2": 19439.293519274892,
+          "M3": 17626.554227732315,
+          "difference": -1812.7392915425771
+        },
+        {
+          "anchor": "2025-12-21",
+          "shock": "test_low_inventory_3days",
+          "M2": 31137.20997948368,
+          "M3": 29124.768122581565,
+          "difference": -2012.4418569021145
+        },
+        {
+          "anchor": "2025-12-21",
+          "shock": "test_peak_30",
+          "M2": 5153.840750057827,
+          "M3": 5239.67408339116,
+          "difference": 85.83333333333303
+        },
+        {
+          "anchor": "2025-12-21",
+          "shock": "test_pv_50",
+          "M2": 13927.946758924601,
+          "M3": 13231.863369733563,
+          "difference": -696.0833891910388
+        }
+      ]
+    },
+    "additional_cash_cost": {
+      "improved": 23,
+      "worsened": 1,
+      "tied": 0,
+      "cases": [
+        {
+          "anchor": "2025-03-20",
+          "shock": "test_joint_15_40",
+          "M2": 183100.80919534792,
+          "M3": 177565.26098131674,
+          "difference": -5535.54821403118
+        },
+        {
+          "anchor": "2025-03-20",
+          "shock": "test_joint_15_40_3days",
+          "M2": 345909.75062408485,
+          "M3": 317522.5232847989,
+          "difference": -28387.22733928595
+        },
+        {
+          "anchor": "2025-03-20",
+          "shock": "test_load_20",
+          "M2": 113178.87609395155,
+          "M3": 95680.04284242133,
+          "difference": -17498.833251530217
+        },
+        {
+          "anchor": "2025-03-20",
+          "shock": "test_low_inventory_3days",
+          "M2": 234429.59999367074,
+          "M3": 216843.3567161906,
+          "difference": -17586.243277480127
+        },
+        {
+          "anchor": "2025-03-20",
+          "shock": "test_peak_30",
+          "M2": 36989.549281943975,
+          "M3": 34176.01876968737,
+          "difference": -2813.530512256606
+        },
+        {
+          "anchor": "2025-03-20",
+          "shock": "test_pv_50",
+          "M2": 127623.85859565737,
+          "M3": 127544.37250607109,
+          "difference": -79.48608958628029
+        },
+        {
+          "anchor": "2025-06-21",
+          "shock": "test_joint_15_40",
+          "M2": 103482.45920054428,
+          "M3": 94499.24465768132,
+          "difference": -8983.21454286296
+        },
+        {
+          "anchor": "2025-06-21",
+          "shock": "test_joint_15_40_3days",
+          "M2": 325540.61365384975,
+          "M3": 291726.65302184457,
+          "difference": -33813.96063200518
+        },
+        {
+          "anchor": "2025-06-21",
+          "shock": "test_load_20",
+          "M2": 19715.94059072672,
+          "M3": 12572.988805793222,
+          "difference": -7142.951784933499
+        },
+        {
+          "anchor": "2025-06-21",
+          "shock": "test_low_inventory_3days",
+          "M2": 199697.44430710867,
+          "M3": 162098.66507530992,
+          "difference": -37598.77923179875
+        },
+        {
+          "anchor": "2025-06-21",
+          "shock": "test_peak_30",
+          "M2": 13317.287760563937,
+          "M3": 8919.25557547496,
+          "difference": -4398.032185088978
+        },
+        {
+          "anchor": "2025-06-21",
+          "shock": "test_pv_50",
+          "M2": 78549.58119948795,
+          "M3": 70137.98558854031,
+          "difference": -8411.59561094764
+        },
+        {
+          "anchor": "2025-09-23",
+          "shock": "test_joint_15_40",
+          "M2": 194764.11874581355,
+          "M3": 191453.3587866941,
+          "difference": -3310.7599591194594
+        },
+        {
+          "anchor": "2025-09-23",
+          "shock": "test_joint_15_40_3days",
+          "M2": 442893.2441279102,
+          "M3": 436903.021598343,
+          "difference": -5990.222529567196
+        },
+        {
+          "anchor": "2025-09-23",
+          "shock": "test_load_20",
+          "M2": 121397.7654277284,
+          "M3": 118057.94573783423,
+          "difference": -3339.819689894168
+        },
+        {
+          "anchor": "2025-09-23",
+          "shock": "test_low_inventory_3days",
+          "M2": 345642.9672480672,
+          "M3": 309277.5420231034,
+          "difference": -36365.42522496381
+        },
+        {
+          "anchor": "2025-09-23",
+          "shock": "test_peak_30",
+          "M2": 41172.924061270474,
+          "M3": 41131.29424678714,
+          "difference": -41.629814483334485
+        },
+        {
+          "anchor": "2025-09-23",
+          "shock": "test_pv_50",
+          "M2": 139800.28155696153,
+          "M3": 135812.88407034552,
+          "difference": -3987.3974866160133
+        },
+        {
+          "anchor": "2025-12-21",
+          "shock": "test_joint_15_40",
+          "M2": 140722.41043016332,
+          "M3": 133851.77961732604,
+          "difference": -6870.630812837277
+        },
+        {
+          "anchor": "2025-12-21",
+          "shock": "test_joint_15_40_3days",
+          "M2": 316184.4724989784,
+          "M3": 307254.54325585417,
+          "difference": -8929.929243124207
+        },
+        {
+          "anchor": "2025-12-21",
+          "shock": "test_load_20",
+          "M2": 107982.33534988528,
+          "M3": 100111.82419750768,
+          "difference": -7870.5111523775995
+        },
+        {
+          "anchor": "2025-12-21",
+          "shock": "test_low_inventory_3days",
+          "M2": 211539.60322897104,
+          "M3": 204026.7540851014,
+          "difference": -7512.849143869651
+        },
+        {
+          "anchor": "2025-12-21",
+          "shock": "test_peak_30",
+          "M2": 34301.69330365074,
+          "M3": 34896.88663698408,
+          "difference": 595.1933333333436
+        },
+        {
+          "anchor": "2025-12-21",
+          "shock": "test_pv_50",
+          "M2": 74168.52637392795,
+          "M3": 71090.47226681693,
+          "difference": -3078.05410711102
+        }
+      ]
+    }
+  },
+  "bootstrap_interpretation": "两模型使用相同日期块索引，重采样已经保存的日级结果；不重新模拟被拼接的储能轨迹。此为事后、有限样本、对块长敏感的描述性区间。季节非平稳与更长状态依赖未必被短块充分保留，不能当作未来费用或风险保证，也不用于重新选择模型。"
+}

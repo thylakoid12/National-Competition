@@ -1,0 +1,99 @@
+{
+  "protocol_frozen.json": {
+    "path": "D:\\数模\\2026国赛\\Code\\q2\\结果\\statistical_risk_v1\\protocol_frozen.json",
+    "created": "2026-09-12T12:47:48.563563",
+    "modified": "2026-09-12T12:47:48.563563",
+    "bytes": 5038,
+    "sha256": "2f07ef7ea6b9b10d32c3807ed52e15e6eff7ce0147791de62bb661d268ecc5f2"
+  },
+  "selection_frozen.json": {
+    "path": "D:\\数模\\2026国赛\\Code\\q2\\结果\\statistical_risk_v1\\selection_frozen.json",
+    "created": "2026-09-12T12:50:26.485895",
+    "modified": "2026-09-12T12:50:26.485895",
+    "bytes": 12675,
+    "sha256": "4da30bb960764d64f53f628a16aa4a2f954a547cae61112d52075f683b0f7a2a"
+  },
+  "evaluation/M3/2025-02-01.json": {
+    "path": "D:\\数模\\2026国赛\\Code\\q2\\结果\\statistical_risk_v1\\evaluation\\M3\\2025-02-01.json",
+    "created": "2026-09-12T12:54:52.670857",
+    "modified": "2026-09-12T12:54:52.671860",
+    "bytes": 192396,
+    "sha256": "ce2135020ddbeaf168a52feed01884d7ba69a45c3e49cab7865024a044006455"
+  },
+  "evaluation/M3/summary.json": {
+    "path": "D:\\数模\\2026国赛\\Code\\q2\\结果\\statistical_risk_v1\\evaluation\\M3\\summary.json",
+    "created": "2026-09-12T13:10:57.329236",
+    "modified": "2026-09-12T13:10:57.329236",
+    "bytes": 1309,
+    "sha256": "37446946739a67635e0bdc5b9b54e4fdb4cc5742d23ab63d3d464e205070dfd2"
+  },
+  "evaluation/M3/complete.json": {
+    "path": "D:\\数模\\2026国赛\\Code\\q2\\结果\\statistical_risk_v1\\evaluation\\M3\\complete.json",
+    "created": "2026-09-12T13:10:57.330291",
+    "modified": "2026-09-12T13:10:57.330291",
+    "bytes": 65,
+    "sha256": "c039232ca31bfd213f6efb00884c780c461afae0159628ff10c24400ad009348"
+  },
+  "submission/M3/result2.xlsx": {
+    "path": "D:\\数模\\2026国赛\\Code\\q2\\结果\\statistical_risk_v1\\submission\\M3\\result2.xlsx",
+    "created": "2026-09-12T13:19:05.228778",
+    "modified": "2026-09-12T13:19:05.230778",
+    "bytes": 564187,
+    "sha256": "a27ea7edd234a2b2ce9e9a26e287bc1075d61bf2fe4ab37e390575515a79e8e7"
+  },
+  "figures/绘图数据/M3_十分钟明细.csv": {
+    "path": "D:\\数模\\2026国赛\\Code\\q2\\结果\\statistical_risk_v1\\figures\\绘图数据\\M3_十分钟明细.csv",
+    "created": "2026-09-12T13:18:27.560714",
+    "modified": "2026-09-12T13:27:38.884459",
+    "bytes": 10065524,
+    "sha256": "a6fe2007578cc5bd99b490f14b8418a3dfde41281ddc36451d5922687a32c142"
+  },
+  "figures/M3/全年总览.png": {
+    "path": "D:\\数模\\2026国赛\\Code\\q2\\结果\\statistical_risk_v1\\figures\\M3\\全年总览.png",
+    "created": "2026-09-12T13:18:28.235108",
+    "modified": "2026-09-12T13:27:39.265744",
+    "bytes": 701268,
+    "sha256": "f925af76e530cc250deb2fd7314937164678fdc378612a15cc2eb25b7726a0ff"
+  },
+  "run_identity": {
+    "checked_at": "2026-09-12T13:29:10.883183",
+    "schema": "statistical-risk-v1",
+    "cost_premium": 0.03,
+    "selected": "M3",
+    "source_attachments": "D:\\数模\\2026国赛",
+    "code_file_count": 14,
+    "code_hashes": {
+      "config.py": "73a55da6099c5d70cc33f18a5f27ddc9b524df011a30a5db296bfdf061f88d77",
+      "models.py": "286bbe1cc765c4d0f6758e8f46facc831b3c00156319ad1ae2b604aa54a477de",
+      "data.py": "ac28a4ae420595700c906ab9d62dd2373a04c88c6c9b62b9cabc94ca9b0700b5",
+      "forecast.py": "d4b6f5e39eb6ce7b7f61e4da38f52013708da07e2ac1ba9ad5726846dab0dc08",
+      "scenarios.py": "9e746f04eb107cd9e7b13bff8bead74953cf2a24221141ac366dcaaf9024732d",
+      "risk.py": "8a811a8c1c6508c7b2b41f6a3b2ecf5aaf8f8a4494edb2a74c3eadf8d824893e",
+      "solver.py": "f37e65dd86719e75491a40e38ee8405b0f99c8470d6e0dc362ffa22485f22264",
+      "controller.py": "0765a6fd2e5eaddf25b0e4b15294394b555837dccfff581621d48371734ecfd6",
+      "optimizer.py": "6c61a949217c50d63731727b7a8787899f1408dd36c8dc0a5dac58029273ecb7",
+      "seed.py": "4778aa1dd0bcbe95e63d024366b1e126413c002dfb9e6fa1265833bde75a781b",
+      "seed_model.py": "08ac81d1fde58a37b69b0905ab63615c3beb5da3f61f2ef7d9e0c2735f728850",
+      "stress.py": "6fd1936c12ccbe50020ee509670041fc3c36160bd98ce621529e8ac4531b1c1f",
+      "metrics.py": "e3eac5638b53344cdeb2e887b0c4223a4c7f7f31ceff170b00e584af0de85661",
+      "statistical_experiment.py": "872767684f3b87a0507c13ee0c2fda28f005cc68cd9ca3b7167c13f40c4c6f10"
+    },
+    "input_hashes": {
+      "附件1.xlsx": "7590f3a372938c48d164b2a6615ffe2bec2a4b69b874a9e1fa93504d424b6df3",
+      "附件2.xlsx": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72"
+    },
+    "all_7_candidates_completed": true,
+    "main_models": [
+      "M0",
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "risk_extensions": [
+      "M3-R",
+      "M3-S",
+      "M3-RS"
+    ],
+    "note": "绘图文件后续重新排版；底层购电计划没有改写"
+  }
+}

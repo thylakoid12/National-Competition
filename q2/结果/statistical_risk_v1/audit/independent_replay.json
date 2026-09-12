@@ -1,0 +1,182 @@
+{
+  "created": "2026-09-12T13:25:55.232356",
+  "input_files_match": true,
+  "all_365_day_forecasts_rebuilt_from_past": true,
+  "all_334_day_scenarios_ignore_current_and_future": true,
+  "phases": {
+    "warmup": {
+      "warmup": {
+        "complete": true,
+        "audited": true,
+        "days": 31,
+        "independent_cash_cost": 2242638.8686495577,
+        "independent_emergency_kwh": 166811.54817094727,
+        "max_array_delta": 1.1368683772161603e-13,
+        "initial_energy": 6000,
+        "end_energy": 10800.0
+      }
+    },
+    "validation": {
+      "M0": {
+        "complete": true,
+        "audited": true,
+        "days": 17,
+        "independent_cash_cost": 890125.7578356934,
+        "independent_emergency_kwh": 12347.669607993184,
+        "max_array_delta": 1.1368683772161603e-13,
+        "initial_energy": 10254.264738214282,
+        "end_energy": 2746.031455252258
+      },
+      "M1": {
+        "complete": true,
+        "audited": true,
+        "days": 17,
+        "independent_cash_cost": 871594.8482743257,
+        "independent_emergency_kwh": 3003.3705846751227,
+        "max_array_delta": 1.1368683772161603e-13,
+        "initial_energy": 10254.264738214282,
+        "end_energy": 3829.253651903437
+      },
+      "M2": {
+        "complete": true,
+        "audited": true,
+        "days": 17,
+        "independent_cash_cost": 867917.4197419496,
+        "independent_emergency_kwh": 2015.2946831280842,
+        "max_array_delta": 1.1368683772161603e-13,
+        "initial_energy": 10254.264738214282,
+        "end_energy": 3974.3603392831383
+      },
+      "M3": {
+        "complete": true,
+        "audited": true,
+        "days": 17,
+        "independent_cash_cost": 887111.7010584963,
+        "independent_emergency_kwh": 2957.1766156261046,
+        "max_array_delta": 1.1368683772161603e-13,
+        "initial_energy": 10254.264738214282,
+        "end_energy": 7442.125319050201
+      },
+      "M3-R": {
+        "complete": true,
+        "audited": true,
+        "days": 17,
+        "independent_cash_cost": 1507214.6369094863,
+        "independent_emergency_kwh": 0.0,
+        "max_array_delta": 0.0,
+        "initial_energy": 10254.264738214282,
+        "end_energy": 10800.0
+      },
+      "M3-RS": {
+        "complete": true,
+        "audited": true,
+        "days": 17,
+        "independent_cash_cost": 1507214.6369094863,
+        "independent_emergency_kwh": 0.0,
+        "max_array_delta": 0.0,
+        "initial_energy": 10254.264738214282,
+        "end_energy": 10800.0
+      },
+      "M3-S": {
+        "complete": true,
+        "audited": true,
+        "days": 17,
+        "independent_cash_cost": 1004123.4607901394,
+        "independent_emergency_kwh": 1233.9884374088851,
+        "max_array_delta": 1.1368683772161603e-13,
+        "initial_energy": 10254.264738214282,
+        "end_energy": 7306.3098722242485
+      }
+    },
+    "evaluation": {
+      "M0": {
+        "complete": true,
+        "audited": true,
+        "days": 334,
+        "independent_cash_cost": 15203993.659294248,
+        "independent_emergency_kwh": 551811.3173627298,
+        "max_array_delta": 9.094947017729282e-13,
+        "initial_energy": 10800.0,
+        "end_energy": 1207.9005059029341
+      },
+      "M1": {
+        "complete": true,
+        "audited": true,
+        "days": 334,
+        "independent_cash_cost": 14017617.951101523,
+        "independent_emergency_kwh": 135875.01255775715,
+        "max_array_delta": 9.094947017729282e-13,
+        "initial_energy": 10800.0,
+        "end_energy": 1239.4777271139455
+      },
+      "M2": {
+        "complete": true,
+        "audited": true,
+        "days": 334,
+        "independent_cash_cost": 13899701.634530442,
+        "independent_emergency_kwh": 111956.18281281745,
+        "max_array_delta": 4.547473508864641e-13,
+        "initial_energy": 10800.0,
+        "end_energy": 1256.1588701535889
+      },
+      "M3": {
+        "complete": true,
+        "audited": true,
+        "days": 334,
+        "independent_cash_cost": 13989245.842421515,
+        "independent_emergency_kwh": 92935.42196567658,
+        "max_array_delta": 4.547473508864641e-13,
+        "initial_energy": 10800.0,
+        "end_energy": 1200.9691411570775
+      },
+      "M3-R": {
+        "complete": true,
+        "audited": true,
+        "days": 334,
+        "independent_cash_cost": 15209685.126294015,
+        "independent_emergency_kwh": 77804.77371774206,
+        "max_array_delta": 2.2737367544323206e-13,
+        "initial_energy": 10800.0,
+        "end_energy": 1272.9361965819646
+      },
+      "M3-RS": {
+        "complete": true,
+        "audited": true,
+        "days": 334,
+        "independent_cash_cost": 17849107.977047253,
+        "independent_emergency_kwh": 14558.05895131134,
+        "max_array_delta": 1.1368683772161603e-13,
+        "initial_energy": 10800.0,
+        "end_energy": 7983.228179517315
+      },
+      "M3-S": {
+        "complete": true,
+        "audited": true,
+        "days": 334,
+        "independent_cash_cost": 17035594.800516885,
+        "independent_emergency_kwh": 13754.838624964877,
+        "max_array_delta": 1.1368683772161603e-13,
+        "initial_energy": 10800.0,
+        "end_energy": 7983.228179517315
+      }
+    }
+  },
+  "selected_reoptimization": [
+    {
+      "date": "2025-02-01",
+      "current_and_future_actual": "NaN",
+      "saved_plan_matches": true
+    },
+    {
+      "date": "2025-06-21",
+      "current_and_future_actual": "NaN",
+      "saved_plan_matches": true
+    },
+    {
+      "date": "2025-12-31",
+      "current_and_future_actual": "NaN",
+      "saved_plan_matches": true
+    }
+  ],
+  "all_evaluation_models_audited": true
+}

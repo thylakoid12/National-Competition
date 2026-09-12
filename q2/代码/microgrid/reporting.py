@@ -23,9 +23,9 @@ METRICS = (
 )
 
 
-def daily_results(source):
+def daily_results(source, choice=None):
     source = Path(source)
-    choice = evaluation_choice(source)["selected"]
+    choice = choice or evaluation_choice(source)["selected"]
     directory = source / "evaluation" / choice
     paths = sorted(directory.glob("2025-??-??.json"))
     rows = [read_json(p) for p in paths]
@@ -75,7 +75,7 @@ def report(source, output):
         lines.append(f"| {label} | {value} |")
     lines += [
         "",
-        "说明：B为一月选型方案，A为另行指定的固定规则对照。两者均属于事后重新设计，不能声称为未见全年数据时的预注册实验。",
+        "说明：方案标识与选型记录来自本次结果目录。模型属于事后重新设计，不能声称为未见全年数据时的预注册实验。",
     ]
     (output / "评价期汇总.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     return summary

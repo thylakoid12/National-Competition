@@ -1,0 +1,5 @@
+# Preserve the exact bytes used by the frozen experiment and output hashes.
+q2/代码/microgrid/*.py -text
+q2/代码/论文写作/*.html -text
+q2/结果/** -text
+论文用结果/** -text

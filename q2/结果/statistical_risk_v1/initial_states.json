@@ -1,0 +1,7 @@
+{
+  "validation_initial": 10254.264738214282,
+  "evaluation_initial": 10800.0,
+  "initial_energy": 6000,
+  "source": "reproducible common warmup/2025-01-01..31",
+  "policy": "Fixed causal warmup; each compared trajectory then carries its own realized inventory"
+}

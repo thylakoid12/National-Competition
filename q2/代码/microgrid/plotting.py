@@ -229,7 +229,7 @@ def plot_submission(source, output, dates=DEFAULT_DATES, cfg=None):
     source, output = Path(source), Path(output)
     variant, directory, rows = daily_results(source)
     cfg = cfg or load_config()
-    model = {"search_only": "A", "joint_reserve": "B", "adaptive_joint": "C"}[variant]
+    model = {"search_only": "A", "joint_reserve": "B", "adaptive_joint": "C"}.get(variant, variant)
     output.mkdir(parents=True, exist_ok=True)
     keys = ("load", "pv", "G", "H")
     daily = {key: [] for key in keys}

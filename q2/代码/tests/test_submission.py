@@ -10,6 +10,10 @@ from microgrid.submission import make_payload, intervals
 
 
 class SubmissionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        RESULT_DIR.mkdir(parents=True, exist_ok=True)
+
     def test_contiguous_emergency_periods(self):
         h = np.zeros(144)
         h[0:2] = [1, 2]
@@ -20,6 +24,8 @@ class SubmissionTests(unittest.TestCase):
         )
 
     def test_complete_official_and_paper_tables(self):
+        if not (CURRENT_RESULT / "evaluation/joint_reserve/2025-12-31.npz").is_file():
+            self.skipTest("缺少此项固定金额断言对应的历史 B 全年结果")
         with tempfile.TemporaryDirectory(dir=RESULT_DIR) as output:
             data = make_payload(CURRENT_RESULT, output)
             self.assertEqual(data["model"], "B")

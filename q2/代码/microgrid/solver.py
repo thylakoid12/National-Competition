@@ -126,6 +126,50 @@ def _batch(
 _compiled = None
 
 
+def _metrics_batch(G, reference, E0, paths, price, e_min, e_max, B, eta_c, eta_d, multiplier):
+    result = np.zeros((len(paths), 9))
+    for s in range(len(paths)):
+        E, minimum = E0, E0
+        for t in range(len(G)):
+            a = G[t] + paths[s, t, 1] - paths[s, t, 0]
+            C = min(max(a, 0.0), B, max((e_max-E)/eta_c, 0.0))
+            D = min(max(-a, 0.0), B, eta_d*max(E-reference[t+1], 0.0))
+            H = max(-a, 0.0)-D
+            Z = max(a, 0.0)-C
+            U = min(G[t], Z)
+            E += eta_c*C-D/eta_d
+            minimum = min(minimum, E)
+            result[s, 0] += multiplier*price[t]*H
+            result[s, 1] += H
+            result[s, 2] = max(result[s, 2], H)
+            result[s, 5] += U
+            result[s, 6] += Z-U
+            result[s, 7] += C
+            result[s, 8] += D
+        result[s, 3], result[s, 4] = minimum, E
+    return result
+
+
+_metrics_compiled = None
+METRIC_KEYS = ("emergency_cost", "emergency_kwh", "peak_emergency_kwh",
+               "min_energy", "end_energy", "unused", "curtailment", "charge", "discharge")
+
+
+def batch_metrics(G, reference, E0, paths, price, cfg):
+    """与逐时控制器一致的场景模拟，保留费用与库存的独立分解。"""
+    global _metrics_compiled
+    paths = np.asarray(paths, float)
+    if paths.ndim != 3 or paths.shape[1:] != (len(G), 2) or not np.isfinite(paths).all() or (paths < 0).any():
+        raise ValueError("Invalid scenario paths")
+    if _metrics_compiled is None:
+        from numba import njit
+        _metrics_compiled = njit(cache=True, fastmath=False)(_metrics_batch)
+    matrix = _metrics_compiled(np.asarray(G, float), np.asarray(reference, float),
+        float(E0), paths, np.asarray(price, float), cfg.e_min, cfg.e_max, cfg.B,
+        cfg.eta_c, cfg.eta_d, cfg.emergency_multiplier)
+    return {key: matrix[:, i] for i, key in enumerate(METRIC_KEYS)}
+
+
 def fast_batch(G, reference, E0, paths, price, nu, cfg):
     global _compiled
     if _compiled is None:

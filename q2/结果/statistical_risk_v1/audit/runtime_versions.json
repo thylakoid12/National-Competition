@@ -1,0 +1,16 @@
+{
+  "python": "3.12.14",
+  "executable": "C:\\Users\\CUIShuijia\\.conda\\envs\\CUMCM\\python.exe",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "openpyxl": "3.1.5",
+    "highspy": "1.15.1",
+    "numba": "0.67.0"
+  },
+  "annual_workers": 7,
+  "gpu_enabled": false
+}

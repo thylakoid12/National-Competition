@@ -5,7 +5,7 @@ from datetime import datetime, time
 from pathlib import Path
 import numpy as np
 import pandas as pd
-from .config import ATTACHMENTS, DT_HOURS, SLOTS
+from .config import ATTACHMENTS, DT_HOURS, SLOTS, resolve_attachments
 
 
 def parse_time_minutes(value):
@@ -29,8 +29,12 @@ class Data:
 
 
 def load_data(attachments=ATTACHMENTS):
-    attachments = Path(attachments)
-    tariff = pd.read_excel(attachments / "附件1.xlsx").iloc[:SLOTS]
+    attachments = resolve_attachments(attachments)
+    tariff = pd.read_excel(attachments / "附件1.xlsx")
+    # 附件末尾存在无时间的合计行；仍严格检查真实的 144 个时段。
+    tariff = tariff.loc[tariff["时间"].notna()]
+    if len(tariff) != SLOTS:
+        raise ValueError("附件1必须恰好包含144个有时间的时段")
     expected_ends = np.arange(10, 1441, 10)
     if not np.array_equal(tariff["时间"].map(parse_time_minutes), expected_ends):
         raise ValueError("附件1的时段顺序不正确")

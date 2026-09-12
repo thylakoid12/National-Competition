@@ -1,0 +1,54 @@
+{
+  "attachments": "D:\\数模\\2026国赛",
+  "files": {
+    "附件1.xlsx": {
+      "bytes": 23746,
+      "sha256": "7590f3a372938c48d164b2a6615ffe2bec2a4b69b874a9e1fa93504d424b6df3",
+      "matches_frozen_input": true
+    },
+    "附件2.xlsx": {
+      "bytes": 907128,
+      "sha256": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72",
+      "matches_frozen_input": true
+    }
+  },
+  "sample": {
+    "date": "2025-02-01",
+    "interval": "00:00–00:10",
+    "original_load_kw": 2532.1822,
+    "expected_kwh": 422.0303666666667,
+    "bank_load_kwh": 422.0303666666667,
+    "equal": true,
+    "bank_days": 365
+  },
+  "evaluation_progress": {
+    "M0": {
+      "completed_days": 44,
+      "last_date": "2025-03-16"
+    },
+    "M1": {
+      "completed_days": 90,
+      "last_date": "2025-05-01"
+    },
+    "M2": {
+      "completed_days": 88,
+      "last_date": "2025-04-29"
+    },
+    "M3": {
+      "completed_days": 69,
+      "last_date": "2025-04-10"
+    },
+    "M3-R": {
+      "completed_days": 56,
+      "last_date": "2025-03-28"
+    },
+    "M3-RS": {
+      "completed_days": 53,
+      "last_date": "2025-03-25"
+    },
+    "M3-S": {
+      "completed_days": 48,
+      "last_date": "2025-03-20"
+    }
+  }
+}
